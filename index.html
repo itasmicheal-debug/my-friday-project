@@ -10,16 +10,25 @@
   <header>
     <div class="header-inner">
       <h1>isaac swiftdelivery</h1>
-      <nav>
-        <a href="index.html" class="nav-link">Home</a>
+      <nav id="main-nav">
+        <button id="mobile-menu-btn" class="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          </svg>
+        </button>
+
         <div class="header-track">
           <input id="header-code" placeholder="Tracking code" />
           <button id="header-track-btn">Track</button>
         </div>
-        <button id="nav-track" class="nav-link">Track</button>
-        <button id="nav-create" class="nav-link">Create</button>
-        <button id="nav-update" class="nav-link">Update</button>
-        <a id="whatsapp-quick" class="nav-link" href="https://api.whatsapp.com/send?phone=09038353163" target="_blank">Customer Care</a>
+
+        <div class="nav-links" role="menu">
+          <a href="index.html" class="nav-link" role="menuitem">Home</a>
+          <button id="nav-track" class="nav-link" role="menuitem">Track</button>
+          <button id="nav-create" class="nav-link" role="menuitem">Create</button>
+          <button id="nav-update" class="nav-link" role="menuitem">Update</button>
+          <a id="whatsapp-quick" class="nav-link" role="menuitem" href="https://api.whatsapp.com/send?phone=09038353163" target="_blank">Customer Care</a>
+        </div>
       </nav>
     </div>
   </header>
