@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>isaac swiftdelivery</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>isaac swiftdelivery</h1>
+		<nav>
+			<button id="nav-create">Create</button>
+			<button id="nav-update">Update</button>
+			<button id="nav-track">Track</button>
+		</nav>
+	</header>
+
+	<main>
+		<section id="section-create" class="panel">
+			<h2>Create Tracking</h2>
+			<form id="form-create">
+				<label>Recipient name<input type="text" id="create-name" required></label>
+				<label>Initial status
+					<select id="create-status">
+						<option>Created</option>
+						<option>Picked up</option>
+						<option>In transit</option>
+						<option>Out for delivery</option>
+						<option>Delivered</option>
+					</select>
+				</label>
+				<label>Note (optional)<input id="create-note" type="text"></label>
+				<button type="submit">Create Tracking</button>
+			</form>
+			<div id="create-result" class="result"></div>
+		</section>
+
+		<section id="section-update" class="panel hidden">
+			<h2>Update Status</h2>
+			<form id="form-update">
+				<label>Tracking code<input id="update-code" required></label>
+				<label>New status
+					<select id="update-status">
+						<option>Picked up</option>
+						<option>In transit</option>
+						<option>Out for delivery</option>
+						<option>Delivered</option>
+						<option>Exception</option>
+					</select>
+				</label>
+				<label>Note (optional)<input id="update-note" type="text"></label>
+				<button type="submit">Apply Update</button>
+			</form>
+			<div id="update-result" class="result"></div>
+		</section>
+
+		<section id="section-track" class="panel hidden">
+			<h2>Track Parcel</h2>
+			<form id="form-track">
+				<label>Tracking code<input id="track-code" required></label>
+				<button type="submit">Lookup</button>
+			</form>
+			<div id="track-result" class="result"></div>
+		</section>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+

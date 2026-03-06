@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>isaac swiftdelivery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>isaac swiftdelivery</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="header-track">
+          <input id="header-code" placeholder="Tracking code" />
+          <button id="header-track-btn">Track</button>
+        </div>
+        <button id="nav-track" class="nav-link">Track</button>
+        <button id="nav-create" class="nav-link">Create</button>
+        <button id="nav-update" class="nav-link">Update</button>
+        <a id="whatsapp-quick" class="nav-link" href="https://api.whatsapp.com/send?phone=09038353163" target="_blank">Customer Care</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero panel hero-hero">
+      <div class="hero-media">
+        <img id="hero-img" alt="delivery truck" src="https://images.unsplash.com/photo-1520975910206-4d1d6b2d2a4b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=6e5f8f9c9f9c9f9c9f9c9f9c9f9c9f9c" />
+        <div class="hero-overlay"></div>
+        <!-- Animated delivery SVGs -->
+        <svg class="anim-icon anim-truck" viewBox="0 0 100 40" aria-hidden="true"><g fill="#fff"><rect x="2" y="12" width="58" height="18" rx="2" /><rect x="60" y="18" width="24" height="12" rx="2" /><circle cx="18" cy="32" r="4" fill="#222" /><circle cx="46" cy="32" r="4" fill="#222" /><circle cx="78" cy="32" r="4" fill="#222" /></g></svg>
+        <svg class="anim-icon anim-plane" viewBox="0 0 100 40" aria-hidden="true"><g fill="#fff"><path d="M2 20 L70 10 L85 20 L70 18 L2 20 Z"/></g></svg>
+        <svg class="anim-icon anim-ship" viewBox="0 0 120 40" aria-hidden="true"><g fill="#fff"><rect x="8" y="18" width="92" height="10" rx="2" /><polygon points="8,18 60,6 112,18"/></g></svg>
+      </div>
+      <div class="hero-content">
+        <div class="eyebrow">isaac swiftdelivery</div>
+        <h1>Move packages with speed and care</h1>
+        <p class="lead">Nationwide coverage, real-time tracking, and reliable delivery options tailored to your business.</p>
+
+        <form id="quick-track" class="quick-track">
+          <input id="quick-code" placeholder="Enter tracking code (e.g. TRK-ABC123)" />
+          <button type="submit" class="btn-primary">Track</button>
+          <button type="button" id="get-quote" class="btn-secondary">Get a Quote</button>
+        </form>
+
+        <p class="contact-note">Need help? <a id="whatsapp-hero" href="https://api.whatsapp.com/send?phone=09038353163" target="_blank">Chat on WhatsApp</a></p>
+      </div>
+    </section>
+
+    <section class="panel gallery">
+      <h3>Our Fleet</h3>
+      <div class="grid">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="van">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="motorbike">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="warehouse">
+      </div>
+    </section>
+
+    <section class="panel reviews">
+      <h3>Customer Reviews</h3>
+      <div id="reviews-list"></div>
+
+      <form id="review-form">
+        <input id="reviewer" placeholder="Your name" required />
+        <textarea id="review-text" placeholder="Write a short review" required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </section>
+
+    <section class="panel support">
+      <h3>Customer Care</h3>
+      <p>Call us: <a href="tel:09038353163">09038353163</a></p>
+      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=09038353163" target="_blank">Start chat</a></p>
+    </section>
+
+    <section class="panel services">
+      <h3>Our Services</h3>
+      <div class="cards">
+        <div class="card" data-key="parcel">
+          <h4>Parcel Delivery</h4>
+          <p>Door-to-door delivery for small and medium parcels.</p>
+        </div>
+        <div class="card" data-key="freight">
+          <h4>Freight</h4>
+          <p>Logistics solutions for large shipments and freight.</p>
+        </div>
+        <div class="card" data-key="express">
+          <h4>Express</h4>
+          <p>Same-day or next-day delivery options.</p>
+        </div>
+      </div>
+      <div id="service-detail" class="result" style="margin-top:12px"></div>
+    </section>
+
+    <section class="panel estimator">
+      <h3>Shipment Estimator</h3>
+      <form id="est-form">
+        <input id="est-weight" placeholder="Weight (kg)" type="number" min="0" step="0.1" required />
+        <input id="est-distance" placeholder="Distance (km)" type="number" min="0" required />
+        <select id="est-speed">
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+        </select>
+        <button type="submit">Estimate Price</button>
+      </form>
+      <div id="est-result" class="result"></div>
+    </section>
+
+    <section class="panel stats">
+      <h3>Our Impact</h3>
+      <div class="stat-grid">
+        <div><div class="stat-number" data-target="12000">0</div><div>Deliveries</div></div>
+        <div><div class="stat-number" data-target="98">0</div><div>Countries</div></div>
+        <div><div class="stat-number" data-target="500">0</div><div>Vehicles</div></div>
+      </div>
+    </section>
+
+    <section class="panel faq">
+      <h3>FAQ</h3>
+      <div class="qa">
+        <div class="q">How long does delivery take?<div class="a hidden">Delivery times vary by service; express is 1-2 days.</div></div>
+        <div class="q">Can I change delivery address?<div class="a hidden">Yes — contact customer care with your tracking code.</div></div>
+        <div class="q">Do you insure shipments?<div class="a hidden">We provide optional insurance at checkout.</div></div>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp button -->
+    <a id="float-whatsapp" href="https://api.whatsapp.com/send?phone=09038353163" target="_blank" title="Chat on WhatsApp">Chat</a>
+
+    <!-- Tracker sections (merged from friday02.html) -->
+    <section id="section-create" class="panel hidden">
+      <h2>Create Tracking</h2>
+      <form id="form-create">
+        <label>Recipient name<input type="text" id="create-name" required></label>
+        <label>Initial status
+          <select id="create-status">
+            <option>Created</option>
+            <option>Picked up</option>
+            <option>In transit</option>
+            <option>Out for delivery</option>
+            <option>Delivered</option>
+          </select>
+        </label>
+        <label>Note (optional)<input id="create-note" type="text"></label>
+        <button type="submit">Create Tracking</button>
+      </form>
+      <div id="create-result" class="result"></div>
+    </section>
+
+    <section id="section-update" class="panel hidden">
+      <h2>Update Status</h2>
+      <form id="form-update">
+        <label>Tracking code<input id="update-code" required></label>
+        <label>New status
+          <select id="update-status">
+            <option>Picked up</option>
+            <option>In transit</option>
+            <option>Out for delivery</option>
+            <option>Delivered</option>
+            <option>Exception</option>
+          </select>
+        </label>
+        <label>Note (optional)<input id="update-note" type="text"></label>
+        <button type="submit">Apply Update</button>
+      </form>
+      <div id="update-result" class="result"></div>
+    </section>
+
+    <section id="section-track" class="panel hidden">
+      <h2>Track Parcel</h2>
+      <form id="form-track">
+        <label>Tracking code<input id="track-code" required></label>
+        <button type="submit">Lookup</button>
+      </form>
+      <div id="track-result" class="result"></div>
+    </section>
+
+  </main>
+
+  <script src="home.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
