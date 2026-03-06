@@ -98,20 +98,36 @@ document.addEventListener('DOMContentLoaded',()=>{
   const navLinks = document.querySelector('#main-nav .nav-links')
   if(mobileBtn && navLinks){
     mobileBtn.addEventListener('click',()=>{
-      navLinks.classList.toggle('open')
+      const isOpen = navLinks.classList.toggle('open')
+      mobileBtn.classList.toggle('open', isOpen)
+      mobileBtn.setAttribute('aria-expanded', String(isOpen))
+      // animate hamburger icon (rotate) via CSS class
     })
     // close menu when clicking outside
     document.addEventListener('click',(e)=>{
       if(!navLinks.classList.contains('open')) return
       if(e.target === mobileBtn || navLinks.contains(e.target)) return
       navLinks.classList.remove('open')
+      mobileBtn.classList.remove('open')
+      mobileBtn.setAttribute('aria-expanded','false')
     })
   }
   // close mobile nav when a nav link is clicked (improves mobile UX)
   document.querySelectorAll('#main-nav .nav-links .nav-link').forEach(el=>{
     el.addEventListener('click',()=>{
       navLinks && navLinks.classList.remove('open')
+      mobileBtn && mobileBtn.classList.remove('open')
+      mobileBtn && mobileBtn.setAttribute('aria-expanded','false')
     })
+  })
+
+  // keyboard: close menu with Escape
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+      navLinks && navLinks.classList.remove('open')
+      mobileBtn && mobileBtn.classList.remove('open')
+      mobileBtn && mobileBtn.setAttribute('aria-expanded','false')
+    }
   })
 
   // Services cards
