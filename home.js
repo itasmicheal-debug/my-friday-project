@@ -107,6 +107,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       navLinks.classList.remove('open')
     })
   }
+  // close mobile nav when a nav link is clicked (improves mobile UX)
+  document.querySelectorAll('#main-nav .nav-links .nav-link').forEach(el=>{
+    el.addEventListener('click',()=>{
+      navLinks && navLinks.classList.remove('open')
+    })
+  })
 
   // Services cards
   document.querySelectorAll('.services .card').forEach(card=>{
