@@ -3,14 +3,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   // Hero image carousel
   const heroImgs=[
-    // delivery truck
-    'https://images.unsplash.com/photo-1520975910206-4d1d6b2d2a4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6e5f8f9c9f9c9f9c9f9c9f9c9f9c9f9c',
-    // cargo ship
-    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f',
-    // airplane
-    'https://images.unsplash.com/photo-1517976487492-6b2b0ad5d4a3?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b3c4d5e6f7g',
-    // warehouse / van
-    'https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c4d5e6f7g8h'
+    'https://images.unsplash.com/photo-1520975910206-4d1d6b2d2a4b?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1517976487492-6b2b0ad5d4a3?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'
   ]
   let hIndex=0
   const heroImg=document.getElementById('hero-img')
@@ -95,6 +90,21 @@ document.addEventListener('DOMContentLoaded',()=>{
       const q = '?code=' + encodeURIComponent(code)
       if(window.location.search === q) window.location.reload()
       else window.location.search = q
+    })
+  }
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn')
+  const navLinks = document.querySelector('#main-nav .nav-links')
+  if(mobileBtn && navLinks){
+    mobileBtn.addEventListener('click',()=>{
+      navLinks.classList.toggle('open')
+    })
+    // close menu when clicking outside
+    document.addEventListener('click',(e)=>{
+      if(!navLinks.classList.contains('open')) return
+      if(e.target === mobileBtn || navLinks.contains(e.target)) return
+      navLinks.classList.remove('open')
     })
   }
 

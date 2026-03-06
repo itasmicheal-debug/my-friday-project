@@ -11,6 +11,7 @@ body{margin:0;background:var(--bg);color:#111}
 header{background:linear-gradient(90deg,var(--brand-purple),#6a2fb6);color:white;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
 header h1{margin:0;font-size:1.05rem}
 nav a,nav button{margin-left:10px;padding:8px 12px;border-radius:8px;border:0;background:transparent;color:rgba(255,255,255,.95);cursor:pointer;text-decoration:none}
+.mobile-menu{display:none;background:transparent;border:0;color:white;font-size:20px;padding:8px}
 main{padding:28px;max-width:1200px;margin:18px auto}
 .panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(15,15,15,.06);margin-bottom:18px}
 .hidden{display:none}
@@ -113,4 +114,22 @@ small{color:var(--muted)}
 	.services .cards{flex-direction:column}
 	.stat-grid{flex-direction:column}
 	.reviews #reviews-list{flex-wrap:nowrap}
+}
+
+/* Responsive header/nav */
+@media (max-width:900px){
+	header{padding:12px}
+	.header-inner{display:flex;align-items:center;gap:12px}
+	.header-track{display:none}
+	.nav-links{display:none;position:absolute;top:64px;right:12px;background:var(--card);padding:12px;border-radius:10px;box-shadow:0 12px 40px rgba(2,6,23,.12);flex-direction:column;min-width:160px}
+	.nav-links.open{display:flex}
+	.nav-links .nav-link{margin:6px 0;color:#111;background:transparent}
+	.mobile-menu{display:inline-block}
+}
+
+@media (max-width:420px){
+	.hero-content{padding:18px}
+	.hero-content h1{font-size:1.4rem}
+	.hero-media{height:200px}
+	.quick-track input{font-size:.95rem}
 }
